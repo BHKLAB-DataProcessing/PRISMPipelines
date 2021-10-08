@@ -1,0 +1,25 @@
+{
+    "pipeline": {
+      "name": "downloadPRISMSecScreenData"
+    },
+    "transform": {
+      "image": "bhklab/pharmacogx2.0:v3",
+      "cmd": [
+        "Rscript", 
+        "/pfs/downloadPRISMSecScreenData/download.R"]
+      },   
+    "resource_requests": {
+      "memory": "100M"
+    },
+    "input": {
+      "cross": [
+        {
+          "git": {
+            "url": "https://github.com/BHKLAB-Pachyderm/downloadPRISMSecScreenData.git",
+            "name": "",
+            "branch": "main"
+          }
+        }
+      ]
+    }
+}

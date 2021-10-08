@@ -1,0 +1,25 @@
+{
+    "pipeline": {
+      "name": "downloadPRISMSensData"
+    },
+    "transform": {
+      "image": "bhklab/pharmacogx2.0:v3",
+      "cmd": [
+        "Rscript", 
+        "/pfs/downloadPRISMSensData/download.R"]
+      },   
+    "resource_requests": {
+      "memory": "100M"
+    },
+    "input": {
+      "cross": [
+        {
+          "git": {
+            "url": "https://github.com/BHKLAB-Pachyderm/downloadPRISMSensData.git",
+            "name": "",
+            "branch": "main"
+          }
+        }
+      ]
+    }
+}
